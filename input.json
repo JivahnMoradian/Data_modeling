@@ -1,0 +1,6 @@
+{
+  "vars":["lai","water","transp","evap"],
+  "spatial_limits":[{"minlat":36.0},{"minlon":-118.9},{"maxlat":36.25},{"maxlon":-118.65}],
+  "time_interval":[{"start_date":"2002,11,14"},{"end_date":"2002,11,16"}],
+  "resolution":"1/8"
+}
