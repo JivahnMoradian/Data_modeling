@@ -43,12 +43,16 @@ def get_date_array(start,end,start_date,end_date):
     trim = dates[dates.index(start_date):dates.index(end_date)+1]
     dates = np.array(dates)
     trim = np.array(trim)
-    return [dates,trim]
+    index = []
+    for i in range(dates.size):
+        if (dates[i] in trim): index.append(i)
+    index = np.array(index)
+    return [dates,trim,index]
 
 # Performs the image warping with the command line
-def warp(a,b,c,d,e,f,g,h):
+def warp(t,a,b,c,d,e,f,g,h):
     os.system('rm %s'%(h))
-    os.system('gdalwarp -tr %f %f -te %f %f %f %f %s %s'%(a,b,c,d,e,f,g,h))
+    os.system('gdalwarp -%s %f %f -te %f %f %f %f %s %s'%(t,a,b,c,d,e,f,g,h))
 
 
 
